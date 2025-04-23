@@ -3,9 +3,17 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./Slider3D.module.css";
 
-const Slider3D = ({ images }) => {
-  const objectRef = useRef(null);
-  const animationRef = useRef(null);
+interface Image {
+  small: string;
+  medium: string;
+  large: string;
+  xlarge: string;
+  default: string;
+}
+
+const Slider3D = ({ images }: { images: Image[] }) => {
+  const objectRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<number | null>(null);
   const [isRotating, setIsRotating] = useState(true);
   const rotationSpeed = useRef(0.3);
 
@@ -75,13 +83,13 @@ const Slider3D = ({ images }) => {
                   }
                   priority={index < 2}
                   sizes="(max-width: 479px) 500px, (max-width: 767px) 800px, (max-width: 991px) 1080px, (max-width: 1279px) 1600px, 1920px"
-                  srcSet={`
-                    ${src.small} 500w,
-                    ${src.medium} 800w,
-                    ${src.large} 1080w,
-                    ${src.xlarge} 1600w,
-                    ${src.default} 1920w
-                  `}
+                  // srcSet={`
+                  //   ${src.small} 500w,
+                  //   ${src.medium} 800w,
+                  //   ${src.large} 1080w,
+                  //   ${src.xlarge} 1600w,
+                  //   ${src.default} 1920w
+                  // `}
                 />
               </div>
             ))}
