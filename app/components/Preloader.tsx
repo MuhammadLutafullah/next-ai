@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./Slider3D.module.css";
 
-const Preloader = ({ onComplete }) => {
+const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const progressRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,9 @@ const Preloader = ({ onComplete }) => {
         return;
       }
       width += 2;
-      progressBar.style.width = `${width}%`;
+      if (progressBar) {
+        (progressBar as HTMLElement).style.width = `${width}%`;
+      }
     }, 30);
 
     return () => clearInterval(interval);
