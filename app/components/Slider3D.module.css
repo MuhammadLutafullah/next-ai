@@ -1,0 +1,257 @@
+body{
+    background-color: #0c0c0c;
+}
+._3dBlock {
+    padding-top: 25rem;
+    
+  }
+  
+  ._3dContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ._3dWrapper {
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transform: scale(1) rotateX(-2deg) rotateY(0) rotateZ(0);
+  }
+  
+  ._3dObject {
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: rotateX(20deg) rotateY(0) rotateZ(0);
+    transition: transform 0.5s ease;
+  }
+  
+  ._3dFace {
+    transform-origin: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 29rem;
+    height: 27rem;
+    position: absolute;
+    right: 0;
+  }
+  
+  ._3dFace._01 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  
+  ._3dFace._02 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-45deg) rotateZ(0);
+  }
+  
+  ._3dFace._03 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-90deg) rotateZ(0);
+  }
+  
+  ._3dFace._04 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-135deg) rotateZ(0);
+  }
+  
+  ._3dFace._05 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-180deg) rotateZ(0);
+  }
+  
+  ._3dFace._06 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-225deg) rotateZ(0);
+  }
+  
+  ._3dFace._07 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-270deg) rotateZ(0);
+  }
+  
+  ._3dFace._08 {
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(-315deg) rotateZ(0);
+  }
+  
+  ._3dImage,
+  ._3dFrontImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Optional: Add hover effects */
+  ._3dObject:hover {
+    cursor: pointer;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1279px) {
+    ._3dFace {
+      width: 24rem;
+      height: 22rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 22rem;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    ._3dFace {
+      width: 20rem;
+      height: 18rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 18rem;
+    }
+    
+    ._3dWrapper {
+      perspective: 1200px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    ._3dFace {
+      width: 16rem;
+      height: 14rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 14rem;
+    }
+    
+    ._3dWrapper {
+      perspective: 1000px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    ._3dFace {
+      width: 12rem;
+      height: 11rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 11rem;
+    }
+    
+    ._3dWrapper {
+      perspective: 800px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    ._3dFace {
+      width: 10rem;
+      height: 9rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 9rem;
+    }
+    
+    ._3dWrapper {
+      perspective: 600px;
+    }
+  }
+  
+  @media (max-width: 340px) {
+    ._3dFace {
+      width: 8rem;
+      height: 7rem;
+    }
+    
+    ._3dBlock {
+      padding-top: 7rem;
+    }
+    
+    ._3dWrapper {
+      perspective: 500px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .preloader {
+    z-index: 9999;
+    background-color: var(--black-02);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+  
+.preloaderHidden {
+    opacity: 0;
+    pointer-events: none;
+}
+  
+.preloaderContainer {
+    width: 100%;
+}
+  
+.preloaderPadding {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+  
+.preloaderWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+  
+.preloaderLine {
+    background-color: var(--white);
+    border-radius: 50px;
+    width: 25%;
+    max-width: 30rem;
+    height: 3px;
+    overflow: hidden;
+}
+  
+.preloaderProgressBar {
+    background-color: #00A8A8;
+    border-radius: 50px;
+    width: 0%;
+    height: 100%;
+    transition: width 0.3s ease;
+}
